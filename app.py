@@ -281,15 +281,8 @@ Suggested Strategies to Reduce Churn
 
 What are the options to bring down marketing costs? 
 
- Initial Marketing Spend Across Channels: 
 
-Digital Ads: $500,000 
 
-In-Store Promotions: $200,000 
-
-Email Campaigns: $150,000 
-
-Social Media Ads: $100,000 
 
 Ways to optimize marketing costs are 
 
