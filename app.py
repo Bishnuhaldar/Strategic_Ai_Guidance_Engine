@@ -301,7 +301,7 @@ In-Store and Online Integration: +$50,000 savings from unified campaign efforts.
 
 Social Media Optimization: +$30,000 savings by leveraging user-generated content. 
 
-Total Projected Cost Reduction: $355,000 
+Total Projected Cost Reduction: $255,000 
  
 
 ################################################################ 
