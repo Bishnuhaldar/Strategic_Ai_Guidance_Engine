@@ -1369,6 +1369,7 @@ if user_input:
             with st.spinner("Please Wait..."):
                 result = qgen(prompt)
                 st.session_state.messages.append({"role": "assistant", "content":result, "summary": ''})
+            break
 
         
     if mock_question==False:
