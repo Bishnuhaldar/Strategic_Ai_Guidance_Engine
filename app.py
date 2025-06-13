@@ -213,10 +213,421 @@ questions=['what are the potential options to reduce churn by 2%','what are the 
           'What are the key factors for margin improvement in the next 3 quarters',
           'Highlight the key impediments impacting the enforcement of internal controls for finance',
           'Summarize the internal finance audit findings and associated potential for reducing the compliance costs',
-          '']
+           'Give all the table names with column customer_id',
+           'Who are the top 10 customers in terms of sales in the last 3 months',
+           'How many customers have not received delivery on the estimated delivery date in the last 1 month',
+           'hat are the top 10 products sold in the last 6 months',
+           'Which customers generated highest sales for Portable Air Purifier in last quarter',
+           'What are the top 5 products purchased by Sarah Thompson for invoice amount equal to 6500',
+           'How many invoices were generated for customer Ahmed Khan for product category granite this year',
+           'What is the average YTD sales by customer for Electric Smart LED Light Bulbs',
+           'Which customer stopped purchasing electronic items in last 3 months compared to previous year'
+           ]
 answers="""
 #########################################################################
 
+*** Give all the table names with column customer_id*** 
+
+Here are the tables that include the customer_id column: 
+
+orders 
+
+shipments 
+
+returns 
+
+customer_feedback 
+
+payments 
+
+*** Who are the top 10 customers in terms of sales in the last 3 months?*** 
+
+Here are the top 10 customers based on total sales value over the last 3 months: 
+
+Rank 
+
+Customer Name 
+
+Customer ID 
+
+Total Sales (USD) 
+
+1 
+
+Sarah Thompson 
+
+C10042 
+
+$12,480.50 
+
+2 
+
+Rajesh Patel 
+
+C10215 
+
+$11,975.00 
+
+3 
+
+Emily Nguyen 
+
+C10173 
+
+$11,630.75 
+
+4 
+
+Ahmed Khan 
+
+C10311 
+
+$10,980.00 
+
+5 
+
+Olivia Rodriguez 
+
+C10487 
+
+$10,450.40 
+
+6 
+
+William Johnson 
+
+C10009 
+
+$9,975.60 
+
+7 
+
+Hannah Kim 
+
+C10194 
+
+$9,840.20 
+
+8 
+
+David Lin 
+
+C10304 
+
+$9,550.00 
+
+9 
+
+Fatima Al-Hassan 
+
+C10562 
+
+$9,370.90 
+
+10 
+
+Lucas Müller 
+
+C10288 
+
+$9,210.00 
+
+These values are based on completed and paid orders. 
+
+*** How many customers have not received delivery on the estimated delivery date in the last 1 month?*** 
+
+In the last 30 days, 372 customers experienced delayed deliveries beyond their estimated delivery dates. This accounts for approximately 7.6% of all orders delivered during that period. 
+
+*** What is the granite product in the product list and its freight value?*** 
+
+Here are the granite-related products currently in the catalog: 
+
+Product ID 
+
+Product Name 
+
+Freight Value (USD) 
+
+P2193 
+
+Granite Kitchen Countertop 
+
+$48.25 
+
+P2207 
+
+Granite Floor Tiles - Grey 
+
+$32.60 
+
+P2211 
+
+Granite Wall Panel 
+
+$41.90 
+
+Freight values are based on average shipping costs per unit over the last 6 months. 
+
+***What are the top 10 products sold in the last 6 months?*** 
+
+Here are the top 10 best-selling products in the last 6 months by quantity sold: 
+
+Rank 
+
+Product Name 
+
+Product ID 
+
+Units Sold 
+
+1 
+
+Wireless Noise-Canceling Headphones 
+
+P1041 
+
+6,472 
+
+2 
+
+12-piece Ceramic Dinnerware Set 
+
+P1103 
+
+5,965 
+
+3 
+
+Smart LED Light Bulbs (Pack of 4) 
+
+P1088 
+
+5,712 
+
+4 
+
+Stainless Steel Cookware Set 
+
+P1017 
+
+5,630 
+
+5 
+
+Organic Cotton Bedsheet - Queen 
+
+P1169 
+
+5,390 
+
+6 
+
+Electric Standing Desk 
+
+P1022 
+
+5,245 
+
+7 
+
+Portable Air Purifier 
+
+P1064 
+
+5,100 
+
+8 
+
+Granite Kitchen Countertop 
+
+P2193 
+
+4,960 
+
+9 
+
+UltraSlim Laptop Backpack 
+
+P1125 
+
+4,900 
+
+10 
+
+Ergonomic Office Chair 
+
+P1005 
+
+4,840 
+
+
+*** Which customers generated highest sales for Portable Air Purifier in last quarter?*** 
+
+In the last quarter (Q2), these are the top 5 customers who generated the highest sales for the product “Portable Air Purifier” (Product ID: P1064): 
+
+Rank 
+
+Customer Name 
+
+Customer ID 
+
+Units Purchased 
+
+Total Sales (USD) 
+
+1 
+
+Emily Nguyen 
+
+C10173 
+
+95 
+
+$4,655.00 
+
+2 
+
+Rajesh Patel 
+
+C10215 
+
+88 
+
+$4,312.00 
+
+3 
+
+Hannah Kim 
+
+C10194 
+
+85 
+
+$4,165.00 
+
+4 
+
+Olivia Rodriguez 
+
+C10487 
+
+79 
+
+$3,869.00 
+
+5 
+
+William Johnson 
+
+C10009 
+
+72 
+
+$3,528.00 
+
+*** What are the top 5 products purchased by Sarah Thompson for invoice amount equal to 6500?*** 
+
+For the invoice with a total amount of $6,500.00 placed by Sarah Thompson (Customer ID: C10042), these are the top 5 products based on line-item value: 
+
+Product Name 
+
+Product ID 
+
+Quantity 
+
+Line Total (USD) 
+
+Stainless Steel Cookware Set 
+
+P1017 
+
+4 
+
+$1,200.00 
+
+Ergonomic Office Chair 
+
+P1005 
+
+2 
+
+$900.00 
+
+Granite Kitchen Countertop 
+
+P2193 
+
+3 
+
+$1,250.00 
+
+Electric Standing Desk 
+
+P1022 
+
+2 
+
+$1,800.00 
+
+Smart LED Light Bulbs (Pack of 4) 
+
+P1088 
+
+5 
+
+$400.00 
+
+These 5 items account for $5,550 of the total invoice, with the rest attributed to taxes and freight. 
+
+*** How many invoices were generated for customer Ahmed Khan for product category granite this year?*** 
+
+So far this year, Ahmed Khan (Customer ID: C10311) has had 6 invoices that included products in the “Granite” category. 
+
+These invoices span items like: 
+
+ 
+
+Granite Kitchen Countertop 
+
+Granite Floor Tiles 
+
+Granite Wall Panel 
+
+Total spend in this category YTD: $10,980.00 
+
+ 
+
+*** What is the average YTD sales by customer for Electric Smart LED Light Bulbs?*** 
+
+ 
+
+Year-to-date, the average sales per customer for “Smart LED Light Bulbs (Pack of 4)” (Product ID: P1088) is: 
+
+ 
+
+$78.40 per customer 
+
+ 
+
+This is based on: 
+
+ 
+
+4,870 customers who purchased it this year 
+
+Total sales value: $381,808.00 
+
+*** Which customer stopped purchasing electronic items in last 3 months compared to previous year?*** 
+
+Based on year-over-year purchasing behavior, the following high-value customer stopped purchasing electronics in the last 3 months, despite regular purchases during the same period last year: 
+
+Customer: Lucas Müller (Customer ID: C10288) 
+
+Electronics spend in Mar–May 2024: $2,450 
+
+Electronics spend in Mar–May 2025: $0.00 
+#########################################################################
+#########################################
 What are the potential options to reduce churn by 2%? 
 
 Churn Analysis Overview 
