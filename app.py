@@ -1757,60 +1757,60 @@ if user_input:
     
     st.session_state.messages.append({"role": "user", "content": user_input})
     mock_question=False
-    for i in questions:
+    # for i in questions:
         
-        if i in user_input.strip().lower() :
-            mock_question=True
-            prompt=f"""a user is asking questions. user questions={user_input}
-            
-            answer the user on the basis of following following question answer. write full answer of question {user_input} as it is with data(table).dont make any changes in answer.
-            {answers}.
-            #########################
-            dont add any additional comment just answer the questions if answer having table u can use table with answers.
-            use bold for heading and bullet points as well for better representaions of answers.
-            """
-            
-            with st.spinner("Please Wait..."):
-                result = qgen(prompt)
-                st.session_state.messages.append({"role": "assistant", "content":result, "summary": ''})
-            break
+        # if i in user_input.strip().lower() :
+    mock_question=True
+    prompt=f"""a user is asking questions. user questions={user_input}
+    
+    answer the user on the basis of following following question answer. write full answer of question {user_input} as it is with data(table).dont make any changes in answer.
+    {answers}.
+    #########################
+    dont add any additional comment just answer the questions if answer having table u can use table with answers.
+    use bold for heading and bullet points as well for better representaions of answers.
+    """
+    
+    with st.spinner("Please Wait..."):
+        result = qgen(prompt)
+        st.session_state.messages.append({"role": "assistant", "content":result, "summary": ''})
+            # break
 
         
-    if mock_question==False:
-        my_prompt = f"""act as a sql query writer for BigQuery database. We have the following schema:
-        project_id = "data-driven-cx"
-        dataset_id = "EDW_ECOM"
-        {st.session_state.schema[0]}
-        Write a SQL query for user input
-        user input-{user_input}.
-        set limit to {limit}.
-        Write only the executable query without any comments or additional text.
-        """
+    # if mock_question==False:
+    #     my_prompt = f"""act as a sql query writer for BigQuery database. We have the following schema:
+    #     project_id = "data-driven-cx"
+    #     dataset_id = "EDW_ECOM"
+    #     {st.session_state.schema[0]}
+    #     Write a SQL query for user input
+    #     user input-{user_input}.
+    #     set limit to {limit}.
+    #     Write only the executable query without any comments or additional text.
+    #     """
         
-        with st.spinner("Generating query..."):
-            final_query = qgen(my_prompt)
-            cleaned_query = final_query.replace("```sql", "").replace("```", "").strip()
+    #     with st.spinner("Generating query..."):
+    #         final_query = qgen(my_prompt)
+    #         cleaned_query = final_query.replace("```sql", "").replace("```", "").strip()
         
-        try:
-            with st.spinner("Executing query..."):
-                data = execute_query(cleaned_query)
-            st.session_state.messages.append({"role": "assistant", "content": final_query, "results": data})
-        except Exception as e:
-            st.error(f"Query execution error: {e}")
-            if "editable_sql" not in st.session_state:
-                st.session_state.editable_sql = final_query
+    #     try:
+    #         with st.spinner("Executing query..."):
+    #             data = execute_query(cleaned_query)
+    #         st.session_state.messages.append({"role": "assistant", "content": final_query, "results": data})
+    #     except Exception as e:
+    #         st.error(f"Query execution error: {e}")
+    #         if "editable_sql" not in st.session_state:
+    #             st.session_state.editable_sql = final_query
 
         # Display the SQL query editor and execution button if there's a query to edit
-        if "editable_sql" in st.session_state:
-            st.write("## Edit and Re-Execute the Query")
-            edited_sql = st.text_area("Edit Query", st.session_state.editable_sql)
+        # if "editable_sql" in st.session_state:
+        #     st.write("## Edit and Re-Execute the Query")
+        #     edited_sql = st.text_area("Edit Query", st.session_state.editable_sql)
             
-            if st.button('Submit'):
-                with st.spinner("Executing query..."):
-                    data = execute_query(edited_sql)
-                if data is not None:
-                    st.session_state.messages.append({"role": "assistant", "content": edited_sql, "results": data})
-                    st.session_state.editable_sql = edited_sql
+        #     if st.button('Submit'):
+        #         with st.spinner("Executing query..."):
+        #             data = execute_query(edited_sql)
+        #         if data is not None:
+        #             st.session_state.messages.append({"role": "assistant", "content": edited_sql, "results": data})
+        #             st.session_state.editable_sql = edited_sql
 
 # Display all the chat messages
 for message in st.session_state.messages:
